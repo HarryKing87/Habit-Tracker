@@ -3,6 +3,8 @@ let buttonEx = document.querySelector('.buttonEx');
 let buttonShower = document.querySelector('.buttonShower');
 let buttonPrint = document.querySelector('.buttonPrint');
 let button1LWater = document.querySelector('.button1LWater');
+let buttonLenses = document.querySelector('.buttonLenses');
+let buttonHaircut = document.querySelector('.buttonHaircut');
 let resultsTab = document.querySelector('.results');
 let currentDate = document.querySelector('.date');
 
@@ -10,9 +12,9 @@ let currentDate = document.querySelector('.date');
 buttonWC.addEventListener('click', function() {
           let d = new Date();
           var WClist = document.createElement('li');
-          WClist.innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + d.getFullYear() + " " + "Used the toilet";
+          WClist.innerHTML = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes()  + " " + "Used the toilet";
           WClist.style.backgroundColor = "lightBlue";
-          localStorage.setItem('habitWC', d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + " " + d.getFullYear() + " Used the toilet");
+          localStorage.setItem('habitWC', d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes()  + " " + "Used the toilet");
           document.body.appendChild(WClist);
 });
 
@@ -20,10 +22,10 @@ buttonWC.addEventListener('click', function() {
 buttonEx.addEventListener('click', function() {
           let d = new Date();
           var Exlist = document.createElement('li');
-          Exlist.innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + " " + d.getFullYear() + " " + "Gone to (X)";
+          Exlist.innerHTML = d.getDate() + "/" + (d.getMonth() + 1) +  "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes()  + " Gone to (X)";
           Exlist.style.backgroundColor = "red";
           Exlist.style.color = "white";
-          localStorage.setItem('habitX', d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + " " + d.getFullYear() + " Gone to (X)");
+          localStorage.setItem('habitX', d.getDate() + "/" + (d.getMonth() + 1) +  "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes()  + " Gone to (X)");
           document.body.appendChild(Exlist);
 });
 
@@ -31,10 +33,10 @@ buttonEx.addEventListener('click', function() {
 buttonShower.addEventListener('click', function() {
           let d = new Date();
           var Showerlist = document.createElement('li');
-          Showerlist.innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + " " + d.getFullYear() + " " + "Took a shower";
+          Showerlist.innerHTML = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Took a shower";
           Showerlist.style.backgroundColor = "yellow";
           Showerlist.style.color = "black";
-          localStorage.setItem('habitShower', d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + " " + d.getFullYear() + " Took a shower");
+          localStorage.setItem('habitShower', d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Took a shower");
           document.body.appendChild(Showerlist);
 });
 
@@ -42,11 +44,33 @@ buttonShower.addEventListener('click', function() {
 button1LWater.addEventListener('click', function() {
           let d = new Date();
           var Water1Llist = document.createElement('li');
-          Water1Llist.innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + " " + d.getFullYear() + " " + "Drank 1L of water";
+          Water1Llist.innerHTML = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Drank 1L of water";
           Water1Llist.style.backgroundColor = "blue";
           Water1Llist.style.color = "white";
-          localStorage.setItem('habitWater', d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + " " + d.getFullYear() + " Drank 1L of water");
+          localStorage.setItem('habitWater', d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Drank 1L of water");
           document.body.appendChild(Water1Llist);
+});
+
+// Contact Lenses button
+buttonLenses.addEventListener('click', function() {
+          let d = new Date();
+          var Lenseslist = document.createElement('li');
+          Lenseslist.innerHTML = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Bought Lenses";
+          Lenseslist.style.backgroundColor = "orange";
+          Lenseslist.style.color = "white";
+          localStorage.setItem('habitLenses', d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Bought Lenses");
+          document.body.appendChild(Lenseslist);
+});
+
+// Haircut button
+buttonHaircut.addEventListener('click', function() {
+          let d = new Date();
+          var Haircutlist = document.createElement('li');
+          Haircutlist.innerHTML = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Did my haircut";
+          Haircutlist.style.backgroundColor = "brown";
+          Haircutlist.style.color = "white";
+          localStorage.setItem('habitHaircut', d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Did my haircut");
+          document.body.appendChild(Haircutlist);
 });
 
 // Fetch items from localStorage
@@ -64,6 +88,7 @@ function allStorage() {
                     {
                               var results = document.createElement('li');
                               results.innerHTML = values[x];
+                              results.style.backgroundColor = "#E8E5E0";
                               document.body.appendChild(results);
                     }
                     
