@@ -1,0 +1,61 @@
+html {
+          background-color: whitesmoke;
+}
+
+
+.container {
+          max-width: 900px;
+          margin: 3rem auto;
+}
+
+.grid {
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+}
+
+button {
+          border: none;
+          border-radius: 10px;
+          background-color: black;
+          color: whitesmoke;
+          font-size: 14px;
+          font-weight: 700;
+          padding: 10px;
+          cursor: pointer;
+}
+
+.print {
+          display: flex;
+          width: 25%;
+          margin: 0 auto;
+}
+
+@keyframes animation {
+          0% {
+                    opacity: 0;
+                    transform: translateX(-100%);
+          }
+
+          100% {
+                    opacity: 1;
+                    transform: translateX(0%);
+          }
+}
+
+li {
+          max-width: 900px;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 17px;
+          padding: 5px;
+          list-style: none;
+          animation-name: animation;
+          animation-duration: 1s;
+}
+
+.results {
+          border: 2px solid black;
+          width: 40%;
+          margin: 0 auto;
+}
