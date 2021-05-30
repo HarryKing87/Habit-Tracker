@@ -6,9 +6,16 @@ let button1LWater = document.querySelector(".button1LWater");
 let buttonLenses = document.querySelector(".buttonLenses");
 let buttonHaircut = document.querySelector(".buttonHaircut");
 let buttonFeet = document.querySelector(".buttonFeet");
+let buttonShaved = document.querySelector('.buttonShaved');
+let buttonHealthyFood = document.querySelector('.buttonHealthyFood');
+let buttonExercise = document.querySelector('.buttonExercise');
+let buttonPosture = document.querySelector('.buttonPosture');
+let buttonAlcohol = document.querySelector('.buttonAlcohol');
 let modalNav = document.querySelector(".print");
 let resultsTab = document.querySelector(".results");
 let currentDate = document.querySelector(".date");
+
+// HEALTH SECTION
 
 // Display date WC
 buttonWC.addEventListener("click", function () {
@@ -146,6 +153,10 @@ button1LWater.addEventListener("click", function () {
   document.getElementById('health-tracking').appendChild(Water1Llist);
 });
 
+
+// BEAUTY SECTION
+
+
 // Contact Lenses button
 buttonLenses.addEventListener("click", function () {
   let d = new Date();
@@ -248,6 +259,178 @@ buttonFeet.addEventListener("click", function () {
   document.getElementById('beauty-tracking').appendChild(FeetList);
 });
 
+// Shaved button
+buttonShaved.addEventListener("click", function () {
+    let d = new Date();
+    var ShavedList = document.createElement("div");
+    ShavedList.innerHTML =
+      d.getDate() +
+      "/" +
+      (d.getMonth() + 1) +
+      "/" +
+      d.getFullYear() +
+      " " +
+      d.getHours() +
+      ":" +
+      d.getMinutes() +
+      " --> " +
+      " Shaved";
+    //FeetList.style.backgroundColor = "#FC5900";
+    //FeetList.style.color = "white";
+    localStorage.setItem(
+      "habitShaved",
+      d.getDate() +
+        "/" +
+        (d.getMonth() + 1) +
+        "/" +
+        d.getFullYear() +
+        " " +
+        d.getHours() +
+        ":" +
+        d.getMinutes() +
+        " Shaved"
+    );
+    document.getElementById('beauty-tracking').appendChild(ShavedList);
+  });
+
+  // SPORT SECTION
+
+  // Healthy Food button
+  buttonHealthyFood.addEventListener("click", function () {
+    let d = new Date();
+    var HealthyList = document.createElement("div");
+    HealthyList.innerHTML =
+      d.getDate() +
+      "/" +
+      (d.getMonth() + 1) +
+      "/" +
+      d.getFullYear() +
+      " " +
+      d.getHours() +
+      ":" +
+      d.getMinutes() +
+      " --> " +
+      " Ate a healthy meal";
+    //FeetList.style.backgroundColor = "#FC5900";
+    //FeetList.style.color = "white";
+    localStorage.setItem(
+      "habitHealthyFood",
+      d.getDate() +
+        "/" +
+        (d.getMonth() + 1) +
+        "/" +
+        d.getFullYear() +
+        " " +
+        d.getHours() +
+        ":" +
+        d.getMinutes() +
+        " Ate a healthy meal"
+    );
+    document.getElementById('sport-tracking').appendChild(HealthyList);
+  });
+
+// Exercise button
+buttonExercise.addEventListener("click", function () {
+    let d = new Date();
+    var ExerciseList = document.createElement("div");
+    ExerciseList.innerHTML =
+      d.getDate() +
+      "/" +
+      (d.getMonth() + 1) +
+      "/" +
+      d.getFullYear() +
+      " " +
+      d.getHours() +
+      ":" +
+      d.getMinutes() +
+      " --> " +
+      " Exercised";
+    //FeetList.style.backgroundColor = "#FC5900";
+    //FeetList.style.color = "white";
+    localStorage.setItem(
+      "habitExercise",
+      d.getDate() +
+        "/" +
+        (d.getMonth() + 1) +
+        "/" +
+        d.getFullYear() +
+        " " +
+        d.getHours() +
+        ":" +
+        d.getMinutes() +
+        " Exercised"
+    );
+    document.getElementById('sport-tracking').appendChild(ExerciseList);
+  });
+
+// Posture button
+buttonPosture.addEventListener("click", function () {
+    let d = new Date();
+    var PostureList = document.createElement("div");
+    PostureList.innerHTML =
+      d.getDate() +
+      "/" +
+      (d.getMonth() + 1) +
+      "/" +
+      d.getFullYear() +
+      " " +
+      d.getHours() +
+      ":" +
+      d.getMinutes() +
+      " --> " +
+      " Maintained Posture";
+    //FeetList.style.backgroundColor = "#FC5900";
+    //FeetList.style.color = "white";
+    localStorage.setItem(
+      "habitPosture",
+      d.getDate() +
+        "/" +
+        (d.getMonth() + 1) +
+        "/" +
+        d.getFullYear() +
+        " " +
+        d.getHours() +
+        ":" +
+        d.getMinutes() +
+        " Maintained Posture"
+    );
+    document.getElementById('sport-tracking').appendChild(PostureList);
+  });
+
+// Alcohol button
+buttonAlcohol.addEventListener("click", function () {
+    let d = new Date();
+    var AlcoholList = document.createElement("div");
+    AlcoholList.innerHTML =
+      d.getDate() +
+      "/" +
+      (d.getMonth() + 1) +
+      "/" +
+      d.getFullYear() +
+      " " +
+      d.getHours() +
+      ":" +
+      d.getMinutes() +
+      " --> " +
+      " Avoided Alcohol";
+    //FeetList.style.backgroundColor = "#FC5900";
+    //FeetList.style.color = "white";
+    localStorage.setItem(
+      "habitAlcohol",
+      d.getDate() +
+        "/" +
+        (d.getMonth() + 1) +
+        "/" +
+        d.getFullYear() +
+        " " +
+        d.getHours() +
+        ":" +
+        d.getMinutes() +
+        " Avoided Alcohol"
+    );
+    document.getElementById('sport-tracking').appendChild(AlcoholList);
+  });
+
 // Fetch items from localStorage
 function allStorage() {
   var values = [],
@@ -276,7 +459,7 @@ function printPage() {
 
 // Save and Get values
 function clearStorage() {
-  let modal = confirm("Are you sure you want to delete your saved habits?");
+  let modal = confirm("Are you sure you'd to delete your saved habits?");
   if (modal == true) {
     localStorage.clear();
   } else {
