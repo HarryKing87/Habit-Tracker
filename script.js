@@ -5,6 +5,7 @@ let buttonPrint = document.querySelector('.buttonPrint');
 let button1LWater = document.querySelector('.button1LWater');
 let buttonLenses = document.querySelector('.buttonLenses');
 let buttonHaircut = document.querySelector('.buttonHaircut');
+let buttonFeet = document.querySelector('.buttonFeet');
 let modalNav = document.querySelector('.print');
 let resultsTab = document.querySelector('.results');
 let currentDate = document.querySelector('.date');
@@ -74,6 +75,17 @@ buttonHaircut.addEventListener('click', function() {
           document.body.appendChild(Haircutlist);
 });
 
+// Feet button
+buttonFeet.addEventListener('click', function() {
+    let d = new Date();
+    var FeetList = document.createElement('li');
+    FeetList.innerHTML = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " --> " + " Cleaned Feet";
+    FeetList.style.backgroundColor = "#FC5900";
+    FeetList.style.color = "white";
+    localStorage.setItem('habitFeet', d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + " Cleaned Feet");
+    document.body.appendChild(FeetList);
+});
+
 // Fetch items from localStorage
 function allStorage() {
 
@@ -95,7 +107,7 @@ function allStorage() {
                     
           
       }
-      resultsTab.innerHTML = allStorage();
+        resultsTab.innerHTML = allStorage();
 
 
 // Print Page
@@ -106,7 +118,7 @@ window.print();
 
 // Save and Get values
 function clearStorage() {
-          let modal = confirm("Are you sure you want to delete the storage?");
+          let modal = confirm("Are you sure you want to delete your saved habits?");
           if (modal == true)
           {
                     localStorage.clear();

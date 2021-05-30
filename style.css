@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
 html {
-          background-color: whitesmoke;
-          background-image: url('http://i.stack.imgur.com/vhoa0.jpg');
-          font-family: 'Squada One', sans-serif;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Squada One', sans-serif;
 }
 
-
 .container {
+          display: flex;
           max-width: 900px;
           margin: 3rem auto;
+          padding: 20px;
+          background-color: white;
+          border-radius: 10px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .grid {
           display: flex;
+          flex-direction: column;
           justify-content: center;
           margin: 0 auto;
 }
@@ -123,6 +129,10 @@ footer {
 
 @media (max-width: 675px)
 {
+
+          .container {
+            flex-direction: column;
+          }
           .grid, .print {
                     display: flex;
                     flex-direction: column;
