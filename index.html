@@ -1,80 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-          <meta charset="UTF-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-          <link rel="stylesheet" href="style.css">
-          <title>Different Buttons</title>
-</head>
-<body>
-          <!--Print Area-->
-          
-                    <button id="navModal"><i class="fas fa-cog"></i></button>
-                    
-                    <div id="myModal" class="modal">
-                              <!-- Modal content -->
-                              <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <h1 style="text-align: center;">Menu</h1>
-                              <button type="button" onclick="clearStorage()" style="margin: 0 auto;"><i class="fas fa-database"></i> Clear Storage</button>
-                              </div>
-                            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Different Buttons</title>
+  </head>
+  <body>
+    <!--Print Area-->
 
-                            <button type="button" onclick="printPage()" style="margin: 0 auto;"><i class="fas fa-print"></i> Print Page</button>
+    <button id="navModal"><i class="fas fa-cog"></i></button>
 
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 style="text-align: center">Menu</h1>
+        <button type="button" onclick="clearStorage()" style="margin: 0 auto">
+          <i class="fas fa-database"></i> Clear Storage
+        </button>
+      </div>
+    </div>
 
-          <div class="container">
-                    <div class="grid">
-                              <h1 style="text-align: center;">Health</h1>
-                              <button class="buttonWC"><i class="fas fa-restroom"></i> WC</button>
-                              <button class="buttonEx"><i class="fas fa-skull"></i> (X)</button>
-                              <button class="buttonShower"><i class="fas fa-shower"></i> Shower</button>
-                              <button class="button1LWater"><i class="fas fa-wine-bottle"></i> 1L Water</button>
-                    </div>
-                    <div class="grid">
-                              <h1 style="text-align: center;">Appearance</h1>
-                              <button class="buttonFeet"><i class="fas fa-socks"></i> Cleaned Feet</button>
-                              <button class="buttonLenses"><i class="fas fa-glasses"></i> Lenses</button>
-                              <button class="buttonHaircut"><i class="fas fa-cut"></i> Haircut</button>
-                    </div>
-                  </div>
-                    
+    <button type="button" onclick="printPage()" style="margin: 0 auto">
+      <i class="fas fa-print"></i> Print Page
+    </button>
 
-                    
-          
-          
-          <footer>Developed by Coding Harry | All Rights Reserved &#174;</footer>
-          <script src="script.js"></script>
-          <script>
-                    // Get the modal
-                    var modal = document.getElementById("myModal");
-                    
-                    // Get the button that opens the modal
-                    var btn = document.getElementById("navModal");
-                    
-                    // Get the <span> element that closes the modal
-                    var span = document.getElementsByClassName("close")[0];
-                    
-                    // When the user clicks the button, open the modal 
-                    btn.onclick = function() {
-                      modal.style.display = "flex";
-                      modal.style.flexDirection = "column";
-                    }
-                    
-                    // When the user clicks on <span> (x), close the modal
-                    span.onclick = function() {
-                      modal.style.display = "none";
-                    }
-                    
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function(event) {
-                      if (event.target == modal) {
-                        modal.style.display = "none";
-                      }
-                    }
-                    </script>
-                    
-</body>
+    <div class="container">
+      <div class="grid">
+        <h1 style="text-align: center"><i class="fas fa-heartbeat" style="font-size: 30px;"></i> Health</h1>
+        <button class="buttonWC"><i class="fas fa-restroom"></i> WC</button>
+        <button class="buttonEx"><i class="fas fa-skull"></i> (X)</button>
+        <button class="buttonShower">
+          <i class="fas fa-shower"></i> Shower
+        </button>
+        <button class="button1LWater">
+          <i class="fas fa-wine-bottle"></i> 1L Water
+        </button>
+      </div>
+      <div class="grid">
+        <h1 style="text-align: center;"><i class="fas fa-air-freshener" style="font-size: 30px;"></i> Beauty</h1>
+        <button class="buttonFeet">
+          <i class="fas fa-socks"></i> Cleaned Feet
+        </button>
+        <button class="buttonLenses">
+          <i class="fas fa-glasses"></i> Lenses
+        </button>
+        <button class="buttonHaircut">
+          <i class="fas fa-cut"></i> Haircut
+        </button>
+      </div>
+    </div>
+    <!--Storage and Live Habits Display-->
+    <div class="results-container">
+      <div id="results-tracked">
+
+      </div>
+      <div id="actual-habits">
+        <div id="health-tracking">
+          <h1><i class="fas fa-heartbeat" style="font-size: 30px;"></i> Health</h1>
+        </div>
+        <div id="beauty-tracking">
+          <h1><i class="fas fa-air-freshener" style="font-size: 30px;"></i> Beauty</h1>
+        </div>
+        
+      </div>
+    </div>
+    
+
+    <footer>Developed by Coding Harry | All Rights Reserved &#174;</footer>
+    <script src="script.js"></script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("navModal");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function () {
+        modal.style.display = "flex";
+        modal.style.flexDirection = "column";
+      };
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
 </html>

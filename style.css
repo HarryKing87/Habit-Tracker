@@ -1,146 +1,166 @@
-@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Squada+One&display=swap");
 
 html {
+  background-color: #30cfd0;
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   background-repeat: no-repeat;
-  height: 100%;
-  font-family: 'Squada One', sans-serif;
+  height: auto;
+  font-family: "Squada One", sans-serif;
 }
 
 .container {
-          display: flex;
-          max-width: 900px;
-          margin: 3rem auto;
-          padding: 20px;
-          background-color: white;
-          border-radius: 10px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .grid {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 button {
-          border: none;
-          border-radius: 10px;
-          background-color: #EDF5E1;
-          color: #5CDB95;
-          font-size: 14px;
-          font-weight: 700;
-          padding: 10px;
-          cursor: pointer;
-          transition: 0.3s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  background-color: #edf5e1;
+  color: #5cdb95;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 button:hover {
-          background-color: #379683;
-          color: whitesmoke;
-          transition: 0.5s ease-in-out;
+  background-color: #379683;
+  color: whitesmoke;
+  transition: 0.5s ease-in-out;
 }
 
 .print {
-          position: absolute;
-          width: 25%;
-          top: 0;
-          margin: 0.5rem ;
+  position: absolute;
+  width: 25%;
+  top: 0;
+  margin: 0.5rem;
 }
 
 @keyframes animation {
-          0% {
-                    opacity: 0;
-                    transform: translateX(-100%);
-          }
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
 
-          100% {
-                    opacity: 1;
-                    transform: translateX(0%);
-          }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 
-li {
-          max-width: 900px;
-          margin: 0 auto;
-          text-align: center;
-          font-size: 20px;
-          padding: 5px;
-          list-style: none;
-          animation-name: animation;
-          animation-duration: 1s;
+div {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+  list-style: none;
+  animation-name: animation;
+  animation-duration: 1s;
 }
 
 .results {
-          border: 2px solid black;
-          width: 40%;
-          margin: 0 auto;
+  border: 2px solid black;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.results-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#actual-habits {
+  background-color: white;
+  border-radius: 10px;
+  width: 40%;
 }
 
 footer {
-          position:absolute;
-          bottom:0;
-          width:100%;
-          text-align: center;
-          color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
 }
 
 .modal {
-          display: none;
-          position: fixed;
-          z-index: 1;
-          padding-top: 100px;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          overflow: auto;
-          background-color: rgb(0,0,0);
-          background-color: rgba(0,0,0,0.4);
-        }
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
 .modal-content {
-          background-color: #fefefe;
-          margin: auto;
-          padding: 20px;
-          border: 1px solid #888;
-          width: 80%;
-          display: flex;
-          flex-direction: column;
-        }
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
 
-        .modal-content button {
-          padding: 14px;
-        }
+.modal-content button {
+  padding: 14px;
+}
 
 .close {
-          color: #aaaaaa;
-          float: right;
-          font-size: 28px;
-          font-weight: bold;
-        }
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 .close:hover,
 .close:focus {
-          color: #000;
-          text-decoration: none;
-          cursor: pointer;
-        }
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-@media (max-width: 675px)
-{
+@media (max-width: 675px) {
+  .container {
+    flex-direction: column;
+  }
+  .results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #actual-habits {
+    width: auto;
+    margin: 1rem auto;
+  }
+  .grid,
+  .print {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
 
-          .container {
-            flex-direction: column;
-          }
-          .grid, .print {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    width: 50%;
-          }
-
-          footer {
-                    display: none;
-          }
+  footer {
+    display: none;
+  }
 }
