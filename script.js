@@ -459,7 +459,7 @@ function printPage() {
 
 // Save and Get values
 function clearStorage() {
-  let modal = confirm("Are you sure you'd to delete your saved habits?");
+  let modal = confirm("Are you sure you'd like to delete your saved habits?");
   if (modal == true) {
     localStorage.clear();
   } else {
