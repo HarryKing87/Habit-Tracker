@@ -14,28 +14,84 @@
     <title>Different Buttons</title>
   </head>
   <body>
-    <!--Print Area-->
-
-    <button id="navModal"><i class="fas fa-cog"></i></button>
-
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h1 style="text-align: center">Menu</h1>
-        <button type="button" onclick="clearStorage()" style="margin: 0 auto">
+    <!-- Navigation Slider -->
+    <header class="mobile">
+      <section
+        id="mySidenav"
+        class="sidenav"
+        style="display: flex; flex-direction: column; float: left"
+      >
+        <a
+          id="firstElement"
+          style="font-size: 40px"
+          href="#"
+          onclick="closeNav()"
+          >&times</a
+        >
+        <h1 id="secondElement" style="text-align: center; color: white">
+          Menu
+        </h1>
+        <button
+          id="thirdElement"
+          type="button"
+          onclick="clearStorage()"
+          style="margin: 0 auto"
+        >
           <i class="fas fa-database"></i> Clear Storage
         </button>
-      </div>
-    </div>
+        <section
+          class="social-icons"
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            align-items: center;
+            width: auto;
+            border: 2px solid magenta;
+          "
+        >
+          <h1 style="color: white; padding: 10px; font-size: 20px">
+            Follow me on:
+          </h1>
+          <a
+            id="firstElement"
+            style="font-size: 17px"
+            href="https://m.facebook.com/babis.hamburg"
+            target="_blank"
+            ><i class="fab fa-facebook"> Facebook</i></a
+          >
+          <a
+            id="secondElement"
+            style="font-size: 17px"
+            href="https://www.instagram.com/coding_harry/"
+            target="_blank"
+            ><i class="fab fa-instagram"> Instagram</i></a
+          >
+          <a
+            id="thirdElement"
+            style="font-size: 17px"
+            href="https://twitter.com/harry_kng?lang=en"
+            target="_blank"
+            ><i class="fab fa-twitter"> Twitter</i></a
+          >
+        </section>
+      </section>
+      <button id="navModal" onclick="openNav()">
+        <i class="fas fa-cog"></i>
+      </button>
+      <button type="button" onclick="printPage()" style="margin: 0 auto">
+        <i class="fas fa-print"></i> Print Page
+      </button>
+    </header>
 
-    <button type="button" onclick="printPage()" style="margin: 0 auto">
-      <i class="fas fa-print"></i> Print Page
-    </button>
-
-    <div class="container">
-      <div class="grid">
-        <h1 style="text-align: center"><i class="fas fa-heartbeat" style="font-size: 30px;"></i> Health</h1>
+    <section class="container">
+      <section class="grid">
+        <h1 style="text-align: center">
+          <i class="fas fa-heartbeat" style="font-size: 30px"></i> Health
+        </h1>
         <button class="buttonWC"><i class="fas fa-restroom"></i> WC</button>
         <button class="buttonEx"><i class="fas fa-skull"></i> (X)</button>
         <button class="buttonShower">
@@ -44,9 +100,11 @@
         <button class="button1LWater">
           <i class="fas fa-wine-bottle"></i> 1L Water
         </button>
-      </div>
-      <div class="grid">
-        <h1 style="text-align: center;"><i class="fas fa-air-freshener" style="font-size: 30px;"></i> Beauty</h1>
+      </section>
+      <section class="grid">
+        <h1 style="text-align: center">
+          <i class="fas fa-air-freshener" style="font-size: 30px"></i> Beauty
+        </h1>
         <button class="buttonFeet">
           <i class="fas fa-socks"></i> Cleaned Feet
         </button>
@@ -56,12 +114,12 @@
         <button class="buttonHaircut">
           <i class="fas fa-cut"></i> Haircut
         </button>
-        <button class="buttonShaved">
-          <i class="fas fa-fan"></i> Shave
-        </button>
-      </div>
-      <div class="grid">
-        <h1 style="text-align: center;"><i class="fas fa-running" style="font-size: 30px;"></i> Sport</h1>
+        <button class="buttonShaved"><i class="fas fa-fan"></i> Shave</button>
+      </section>
+      <section class="grid">
+        <h1 style="text-align: center">
+          <i class="fas fa-running" style="font-size: 30px"></i> Sport
+        </h1>
         <button class="buttonHealthyFood">
           <i class="fas fa-utensils"></i> Eat healthy
         </button>
@@ -74,56 +132,53 @@
         <button class="buttonAlcohol">
           <i class="fas fa-wine-bottle"></i> Avoided Alcohol
         </button>
-      </div>
-    </div>
+      </section>
+    </section>
     <!--Storage and Live Habits Display-->
     <div class="results-container">
-      <div id="results-tracked">
-
-      </div>
+      <div id="results-tracked"></div>
       <div id="actual-habits">
         <div id="health-tracking">
-          <h1><i class="fas fa-heartbeat" style="font-size: 30px;"></i> Health</h1>
+          <h1>
+            <i class="fas fa-heartbeat" style="font-size: 30px"></i> Health
+          </h1>
         </div>
         <div id="beauty-tracking">
-          <h1><i class="fas fa-air-freshener" style="font-size: 30px;"></i> Beauty</h1>
+          <h1>
+            <i class="fas fa-air-freshener" style="font-size: 30px"></i> Beauty
+          </h1>
         </div>
         <div id="sport-tracking">
-          <h1><i class="fas fa-running" style="font-size: 30px;"></i> Sport</h1>
+          <h1><i class="fas fa-running" style="font-size: 30px"></i> Sport</h1>
         </div>
       </div>
     </div>
-    
 
     <footer>Developed by Coding Harry | All Rights Reserved &#174;</footer>
-    <script src="script.js"></script>
     <script>
-      // Get the modal
-      var modal = document.getElementById("myModal");
+      // Navigation
+      let mySidenav = document.getElementById("mySidenav");
+      let firstElement = document.getElementById("firstElement");
+      let secondElement = document.getElementById("secondElement");
+      let thirdElement = document.getElementById("thirdElement");
+      let social = document.querySelector(".social-icons");
 
-      // Get the button that opens the modal
-      var btn = document.getElementById("navModal");
+      function openNav() {
+        mySidenav.style.width = "250px";
+        firstElement.style.animation = "fadeIn 0.8s forwards";
+        secondElement.style.animation = "fadeIn 1.2s forwards";
+        thirdElement.style.animation = "fadeIn 1.6s forwards";
+        social.style.animation = "fadeIn 2s forwards";
+      }
 
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks the button, open the modal
-      btn.onclick = function () {
-        modal.style.display = "flex";
-        modal.style.flexDirection = "column";
-      };
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function () {
-        modal.style.display = "none";
-      };
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
+      function closeNav() {
+        mySidenav.style.width = "0px";
+        firstElement.style.animation = "fadeOut 0.2s forwards";
+        secondElement.style.animation = "fadeOut 0.2s forwards";
+        thirdElement.style.animation = "fadeOut 0.2s forwards";
+        social.style.animation = "fadeOut 0.2s forwards";
+      }
     </script>
+    <script src="script.js"></script>
   </body>
 </html>
