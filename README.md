@@ -13,7 +13,7 @@ open the slider navigation and delete the saved habits from different timeframes
 
 You can follow me on some social media platforms shown below:
 
-[1]: https://twitter.com/Harry_Kng
-[2]: https://www.facebook.com/babis.hamburg
-[3]: https://www.instagram.com/coding_harry/
-[4]: http://www.github.com/HarryKing87
+<a href = "https://twitter.com/Harry_Kng">Twitter</a> </br>
+<a href = "https://www.facebook.com/babis.hamburg">Facebook</a> </br>
+<a href = "https://www.instagram.com/coding_harry/">Instagram</a> </br>
+<a href = "http://www.github.com/HarryKing87">GitHub</a> </br>
