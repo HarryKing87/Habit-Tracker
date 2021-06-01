@@ -165,6 +165,31 @@ footer {
   }
 }
 
+/* 
+
+PAGE LOADER
+
+*/
+
+#page-loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  display: none;
+  text-align: center;
+  width: 100%;
+  padding-top: 25px;
+  background-color: rgba(0, 0, 0, 0.7); 
+}
+
+#page-loader img{
+  width: 30%;
+  margin: 20% auto; 
+}
+
 @media (max-width: 675px) {
   .container {
     flex-direction: column;
@@ -173,6 +198,10 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  #page-loader img{
+    width: 100%;
+    margin: 20rem auto; 
   }
   #actual-habits {
     width: auto;

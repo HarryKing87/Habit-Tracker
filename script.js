@@ -18,8 +18,9 @@ let currentDate = document.querySelector(".date");
 // HEALTH SECTION
 
 // Display date WC
-buttonWC.addEventListener("click", function () {
-  let d = new Date();
+buttonWC.addEventListener("click", function () {setTimeout(displayWC, 1000)}); 
+  function displayWC() {
+    let d = new Date();
   var WClist = document.createElement("div");
   WClist.innerHTML =
     d.getDate() +
@@ -49,10 +50,22 @@ buttonWC.addEventListener("click", function () {
       "Used the toilet"
   );
   document.getElementById('health-tracking').appendChild(WClist);
-});
+  }
+
+// Loader for WC
+let anchor = document.getElementById('page-loader');
+  function loader() {
+    setTimeout(function () {
+      anchor.style.display = "block";
+    }, 0);
+    setTimeout(function () {
+      anchor.style.display = "none";
+    }, 1000)
+  }
 
 // Display (X) date
-buttonEx.addEventListener("click", function () {
+buttonEx.addEventListener("click", function () {setTimeout(displayEx, 1000)}); 
+function displayEx() {
   let d = new Date();
   var Exlist = document.createElement("div");
   Exlist.innerHTML =
@@ -83,11 +96,12 @@ buttonEx.addEventListener("click", function () {
       " Gone to (X)"
   );
   document.getElementById('health-tracking').appendChild(Exlist);
-});
+}
 
 // Shower button
-buttonShower.addEventListener("click", function () {
-  let d = new Date();
+buttonShower.addEventListener("click", function () {setTimeout(displayShower, 1000)});
+function displayShower() {  
+let d = new Date();
   var Showerlist = document.createElement("div");
   Showerlist.innerHTML =
     d.getDate() +
@@ -117,10 +131,11 @@ buttonShower.addEventListener("click", function () {
       " Took a shower"
   );
   document.getElementById('health-tracking').appendChild(Showerlist);
-});
+  };
 
 // 1L Water button
-button1LWater.addEventListener("click", function () {
+button1LWater.addEventListener("click", function () {setTimeout(display1LWater, 1000)});
+function display1LWater() {
   let d = new Date();
   var Water1Llist = document.createElement("div");
   Water1Llist.innerHTML =
@@ -151,14 +166,15 @@ button1LWater.addEventListener("click", function () {
       " Drank 1L of water"
   );
   document.getElementById('health-tracking').appendChild(Water1Llist);
-});
+  }
 
 
 // BEAUTY SECTION
 
 
 // Contact Lenses button
-buttonLenses.addEventListener("click", function () {
+buttonLenses.addEventListener("click", function () {setTimeout(displayLenses, 1000)});
+function displayLenses() {
   let d = new Date();
   var Lenseslist = document.createElement("div");
   Lenseslist.innerHTML =
@@ -189,10 +205,11 @@ buttonLenses.addEventListener("click", function () {
       " Bought Lenses"
   );
   document.getElementById('beauty-tracking').appendChild(Lenseslist);
-});
+};
 
 // Haircut button
-buttonHaircut.addEventListener("click", function () {
+buttonHaircut.addEventListener("click", function () {setTimeout(displayHaircut, 1000)});
+function displayHaircut() {
   let d = new Date();
   var Haircutlist = document.createElement("div");
   Haircutlist.innerHTML =
@@ -223,10 +240,11 @@ buttonHaircut.addEventListener("click", function () {
       " Did my haircut"
   );
   document.getElementById('beauty-tracking').appendChild(Haircutlist);
-});
+}
 
 // Feet button
-buttonFeet.addEventListener("click", function () {
+buttonFeet.addEventListener("click", function () {setTimeout(displayFeet, 1000)});
+function displayFeet() {
   let d = new Date();
   var FeetList = document.createElement("div");
   FeetList.innerHTML =
@@ -257,10 +275,11 @@ buttonFeet.addEventListener("click", function () {
       " Cleaned Feet"
   );
   document.getElementById('beauty-tracking').appendChild(FeetList);
-});
+};
 
 // Shaved button
-buttonShaved.addEventListener("click", function () {
+buttonShaved.addEventListener("click", function () {setTimeout(displayShaved, 1000)});
+function displayShaved() {
     let d = new Date();
     var ShavedList = document.createElement("div");
     ShavedList.innerHTML =
@@ -291,12 +310,13 @@ buttonShaved.addEventListener("click", function () {
         " Shaved"
     );
     document.getElementById('beauty-tracking').appendChild(ShavedList);
-  });
+  };
 
   // SPORT SECTION
 
   // Healthy Food button
-  buttonHealthyFood.addEventListener("click", function () {
+  buttonHealthyFood.addEventListener("click", function () {setTimeout(displayHealthyFood, 1000)});
+  function displayHealthyFood() {
     let d = new Date();
     var HealthyList = document.createElement("div");
     HealthyList.innerHTML =
@@ -327,10 +347,11 @@ buttonShaved.addEventListener("click", function () {
         " Ate a healthy meal"
     );
     document.getElementById('sport-tracking').appendChild(HealthyList);
-  });
+  };
 
 // Exercise button
-buttonExercise.addEventListener("click", function () {
+buttonExercise.addEventListener("click", function () {setTimeout(displayExercise, 1000)}); 
+function displayExercise() {
     let d = new Date();
     var ExerciseList = document.createElement("div");
     ExerciseList.innerHTML =
@@ -361,10 +382,11 @@ buttonExercise.addEventListener("click", function () {
         " Exercised"
     );
     document.getElementById('sport-tracking').appendChild(ExerciseList);
-  });
+  };
 
 // Posture button
-buttonPosture.addEventListener("click", function () {
+buttonPosture.addEventListener("click", function () {setTimeout(displayPosture, 1000)});
+function displayPosture() {
     let d = new Date();
     var PostureList = document.createElement("div");
     PostureList.innerHTML =
@@ -395,10 +417,11 @@ buttonPosture.addEventListener("click", function () {
         " Maintained Posture"
     );
     document.getElementById('sport-tracking').appendChild(PostureList);
-  });
+  };
 
 // Alcohol button
-buttonAlcohol.addEventListener("click", function () {
+buttonAlcohol.addEventListener("click", function () {setTimeout(displayAlcohol, 1000)});
+function displayAlcohol() {
     let d = new Date();
     var AlcoholList = document.createElement("div");
     AlcoholList.innerHTML =
@@ -429,7 +452,7 @@ buttonAlcohol.addEventListener("click", function () {
         " Avoided Alcohol"
     );
     document.getElementById('sport-tracking').appendChild(AlcoholList);
-  });
+  };
 
 // Fetch items from localStorage
 function allStorage() {
@@ -462,6 +485,7 @@ function clearStorage() {
   let modal = confirm("Are you sure you'd like to delete your saved habits?");
   if (modal == true) {
     localStorage.clear();
+    location.reload();
   } else {
   }
 }
