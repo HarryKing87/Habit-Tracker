@@ -129,39 +129,39 @@ footer {
   margin: 0.5rem auto;
 }
 .fa-facebook:hover {
-  color: #4267B2;
+  color: #4267b2;
   cursor: pointer;
 }
 
 .fa-instagram:hover {
-  color: #E1306C;
+  color: #e1306c;
   cursor: pointer;
 }
 
 .fa-twitter:hover {
-  color: #1DA1F2;
+  color: #1da1f2;
   cursor: pointer;
 }
 
 @keyframes fadeIn {
   0% {
-            opacity:0;
-            transform: translateY(100%);
+    opacity: 0;
+    transform: translateY(100%);
   }
 
   100% {
-            opacity: 1;
-            transform: translateY(0%);
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
 
 @keyframes fadeOut {
   0% {
-            opacity:1;
+    opacity: 1;
   }
 
   100% {
-            opacity: 0;
+    opacity: 0;
   }
 }
 
@@ -182,12 +182,12 @@ PAGE LOADER
   text-align: center;
   width: 100%;
   padding-top: 25px;
-  background-color: rgba(0, 0, 0, 0.7); 
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-#page-loader img{
+#page-loader img {
   width: 30%;
-  margin: 20% auto; 
+  margin: 20% auto;
 }
 
 @media (max-width: 675px) {
@@ -199,9 +199,9 @@ PAGE LOADER
     flex-direction: column;
     justify-content: space-between;
   }
-  #page-loader img{
+  #page-loader img {
     width: 100%;
-    margin: 20rem auto; 
+    margin: 20rem auto;
   }
   #actual-habits {
     width: auto;

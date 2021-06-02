@@ -6,11 +6,11 @@ let button1LWater = document.querySelector(".button1LWater");
 let buttonLenses = document.querySelector(".buttonLenses");
 let buttonHaircut = document.querySelector(".buttonHaircut");
 let buttonFeet = document.querySelector(".buttonFeet");
-let buttonShaved = document.querySelector('.buttonShaved');
-let buttonHealthyFood = document.querySelector('.buttonHealthyFood');
-let buttonExercise = document.querySelector('.buttonExercise');
-let buttonPosture = document.querySelector('.buttonPosture');
-let buttonAlcohol = document.querySelector('.buttonAlcohol');
+let buttonShaved = document.querySelector(".buttonShaved");
+let buttonHealthyFood = document.querySelector(".buttonHealthyFood");
+let buttonExercise = document.querySelector(".buttonExercise");
+let buttonPosture = document.querySelector(".buttonPosture");
+let buttonAlcohol = document.querySelector(".buttonAlcohol");
 let modalNav = document.querySelector(".print");
 let resultsTab = document.querySelector(".results");
 let currentDate = document.querySelector(".date");
@@ -18,9 +18,11 @@ let currentDate = document.querySelector(".date");
 // HEALTH SECTION
 
 // Display date WC
-buttonWC.addEventListener("click", function () {setTimeout(displayWC, 1000)}); 
-  function displayWC() {
-    let d = new Date();
+buttonWC.addEventListener("click", function () {
+  setTimeout(displayWC, 1000);
+});
+function displayWC() {
+  let d = new Date();
   var WClist = document.createElement("div");
   WClist.innerHTML =
     d.getDate() +
@@ -49,22 +51,24 @@ buttonWC.addEventListener("click", function () {setTimeout(displayWC, 1000)});
       " " +
       "Used the toilet"
   );
-  document.getElementById('health-tracking').appendChild(WClist);
-  }
+  document.getElementById("health-tracking").appendChild(WClist);
+}
 
 // Loader for WC
-let anchor = document.getElementById('page-loader');
-  function loader() {
-    setTimeout(function () {
-      anchor.style.display = "block";
-    }, 0);
-    setTimeout(function () {
-      anchor.style.display = "none";
-    }, 1000)
-  }
+let anchor = document.getElementById("page-loader");
+function loader() {
+  setTimeout(function () {
+    anchor.style.display = "block";
+  }, 0);
+  setTimeout(function () {
+    anchor.style.display = "none";
+  }, 1000);
+}
 
 // Display (X) date
-buttonEx.addEventListener("click", function () {setTimeout(displayEx, 1000)}); 
+buttonEx.addEventListener("click", function () {
+  setTimeout(displayEx, 1000);
+});
 function displayEx() {
   let d = new Date();
   var Exlist = document.createElement("div");
@@ -95,13 +99,15 @@ function displayEx() {
       d.getMinutes() +
       " Gone to (X)"
   );
-  document.getElementById('health-tracking').appendChild(Exlist);
+  document.getElementById("health-tracking").appendChild(Exlist);
 }
 
 // Shower button
-buttonShower.addEventListener("click", function () {setTimeout(displayShower, 1000)});
-function displayShower() {  
-let d = new Date();
+buttonShower.addEventListener("click", function () {
+  setTimeout(displayShower, 1000);
+});
+function displayShower() {
+  let d = new Date();
   var Showerlist = document.createElement("div");
   Showerlist.innerHTML =
     d.getDate() +
@@ -130,11 +136,13 @@ let d = new Date();
       d.getMinutes() +
       " Took a shower"
   );
-  document.getElementById('health-tracking').appendChild(Showerlist);
-  };
+  document.getElementById("health-tracking").appendChild(Showerlist);
+}
 
 // 1L Water button
-button1LWater.addEventListener("click", function () {setTimeout(display1LWater, 1000)});
+button1LWater.addEventListener("click", function () {
+  setTimeout(display1LWater, 1000);
+});
 function display1LWater() {
   let d = new Date();
   var Water1Llist = document.createElement("div");
@@ -165,15 +173,15 @@ function display1LWater() {
       d.getMinutes() +
       " Drank 1L of water"
   );
-  document.getElementById('health-tracking').appendChild(Water1Llist);
-  }
-
+  document.getElementById("health-tracking").appendChild(Water1Llist);
+}
 
 // BEAUTY SECTION
 
-
 // Contact Lenses button
-buttonLenses.addEventListener("click", function () {setTimeout(displayLenses, 1000)});
+buttonLenses.addEventListener("click", function () {
+  setTimeout(displayLenses, 1000);
+});
 function displayLenses() {
   let d = new Date();
   var Lenseslist = document.createElement("div");
@@ -204,11 +212,13 @@ function displayLenses() {
       d.getMinutes() +
       " Bought Lenses"
   );
-  document.getElementById('beauty-tracking').appendChild(Lenseslist);
-};
+  document.getElementById("beauty-tracking").appendChild(Lenseslist);
+}
 
 // Haircut button
-buttonHaircut.addEventListener("click", function () {setTimeout(displayHaircut, 1000)});
+buttonHaircut.addEventListener("click", function () {
+  setTimeout(displayHaircut, 1000);
+});
 function displayHaircut() {
   let d = new Date();
   var Haircutlist = document.createElement("div");
@@ -239,11 +249,13 @@ function displayHaircut() {
       d.getMinutes() +
       " Did my haircut"
   );
-  document.getElementById('beauty-tracking').appendChild(Haircutlist);
+  document.getElementById("beauty-tracking").appendChild(Haircutlist);
 }
 
 // Feet button
-buttonFeet.addEventListener("click", function () {setTimeout(displayFeet, 1000)});
+buttonFeet.addEventListener("click", function () {
+  setTimeout(displayFeet, 1000);
+});
 function displayFeet() {
   let d = new Date();
   var FeetList = document.createElement("div");
@@ -274,16 +286,33 @@ function displayFeet() {
       d.getMinutes() +
       " Cleaned Feet"
   );
-  document.getElementById('beauty-tracking').appendChild(FeetList);
-};
+  document.getElementById("beauty-tracking").appendChild(FeetList);
+}
 
 // Shaved button
-buttonShaved.addEventListener("click", function () {setTimeout(displayShaved, 1000)});
+buttonShaved.addEventListener("click", function () {
+  setTimeout(displayShaved, 1000);
+});
 function displayShaved() {
-    let d = new Date();
-    var ShavedList = document.createElement("div");
-    ShavedList.innerHTML =
-      d.getDate() +
+  let d = new Date();
+  var ShavedList = document.createElement("div");
+  ShavedList.innerHTML =
+    d.getDate() +
+    "/" +
+    (d.getMonth() + 1) +
+    "/" +
+    d.getFullYear() +
+    " " +
+    d.getHours() +
+    ":" +
+    d.getMinutes() +
+    " --> " +
+    " Shaved";
+  //FeetList.style.backgroundColor = "#FC5900";
+  //FeetList.style.color = "white";
+  localStorage.setItem(
+    "habitShaved",
+    d.getDate() +
       "/" +
       (d.getMonth() + 1) +
       "/" +
@@ -292,35 +321,37 @@ function displayShaved() {
       d.getHours() +
       ":" +
       d.getMinutes() +
-      " --> " +
-      " Shaved";
-    //FeetList.style.backgroundColor = "#FC5900";
-    //FeetList.style.color = "white";
-    localStorage.setItem(
-      "habitShaved",
-      d.getDate() +
-        "/" +
-        (d.getMonth() + 1) +
-        "/" +
-        d.getFullYear() +
-        " " +
-        d.getHours() +
-        ":" +
-        d.getMinutes() +
-        " Shaved"
-    );
-    document.getElementById('beauty-tracking').appendChild(ShavedList);
-  };
+      " Shaved"
+  );
+  document.getElementById("beauty-tracking").appendChild(ShavedList);
+}
 
-  // SPORT SECTION
+// SPORT SECTION
 
-  // Healthy Food button
-  buttonHealthyFood.addEventListener("click", function () {setTimeout(displayHealthyFood, 1000)});
-  function displayHealthyFood() {
-    let d = new Date();
-    var HealthyList = document.createElement("div");
-    HealthyList.innerHTML =
-      d.getDate() +
+// Healthy Food button
+buttonHealthyFood.addEventListener("click", function () {
+  setTimeout(displayHealthyFood, 1000);
+});
+function displayHealthyFood() {
+  let d = new Date();
+  var HealthyList = document.createElement("div");
+  HealthyList.innerHTML =
+    d.getDate() +
+    "/" +
+    (d.getMonth() + 1) +
+    "/" +
+    d.getFullYear() +
+    " " +
+    d.getHours() +
+    ":" +
+    d.getMinutes() +
+    " --> " +
+    " Ate a healthy meal";
+  //FeetList.style.backgroundColor = "#FC5900";
+  //FeetList.style.color = "white";
+  localStorage.setItem(
+    "habitHealthyFood",
+    d.getDate() +
       "/" +
       (d.getMonth() + 1) +
       "/" +
@@ -329,33 +360,35 @@ function displayShaved() {
       d.getHours() +
       ":" +
       d.getMinutes() +
-      " --> " +
-      " Ate a healthy meal";
-    //FeetList.style.backgroundColor = "#FC5900";
-    //FeetList.style.color = "white";
-    localStorage.setItem(
-      "habitHealthyFood",
-      d.getDate() +
-        "/" +
-        (d.getMonth() + 1) +
-        "/" +
-        d.getFullYear() +
-        " " +
-        d.getHours() +
-        ":" +
-        d.getMinutes() +
-        " Ate a healthy meal"
-    );
-    document.getElementById('sport-tracking').appendChild(HealthyList);
-  };
+      " Ate a healthy meal"
+  );
+  document.getElementById("sport-tracking").appendChild(HealthyList);
+}
 
 // Exercise button
-buttonExercise.addEventListener("click", function () {setTimeout(displayExercise, 1000)}); 
+buttonExercise.addEventListener("click", function () {
+  setTimeout(displayExercise, 1000);
+});
 function displayExercise() {
-    let d = new Date();
-    var ExerciseList = document.createElement("div");
-    ExerciseList.innerHTML =
-      d.getDate() +
+  let d = new Date();
+  var ExerciseList = document.createElement("div");
+  ExerciseList.innerHTML =
+    d.getDate() +
+    "/" +
+    (d.getMonth() + 1) +
+    "/" +
+    d.getFullYear() +
+    " " +
+    d.getHours() +
+    ":" +
+    d.getMinutes() +
+    " --> " +
+    " Exercised";
+  //FeetList.style.backgroundColor = "#FC5900";
+  //FeetList.style.color = "white";
+  localStorage.setItem(
+    "habitExercise",
+    d.getDate() +
       "/" +
       (d.getMonth() + 1) +
       "/" +
@@ -364,33 +397,35 @@ function displayExercise() {
       d.getHours() +
       ":" +
       d.getMinutes() +
-      " --> " +
-      " Exercised";
-    //FeetList.style.backgroundColor = "#FC5900";
-    //FeetList.style.color = "white";
-    localStorage.setItem(
-      "habitExercise",
-      d.getDate() +
-        "/" +
-        (d.getMonth() + 1) +
-        "/" +
-        d.getFullYear() +
-        " " +
-        d.getHours() +
-        ":" +
-        d.getMinutes() +
-        " Exercised"
-    );
-    document.getElementById('sport-tracking').appendChild(ExerciseList);
-  };
+      " Exercised"
+  );
+  document.getElementById("sport-tracking").appendChild(ExerciseList);
+}
 
 // Posture button
-buttonPosture.addEventListener("click", function () {setTimeout(displayPosture, 1000)});
+buttonPosture.addEventListener("click", function () {
+  setTimeout(displayPosture, 1000);
+});
 function displayPosture() {
-    let d = new Date();
-    var PostureList = document.createElement("div");
-    PostureList.innerHTML =
-      d.getDate() +
+  let d = new Date();
+  var PostureList = document.createElement("div");
+  PostureList.innerHTML =
+    d.getDate() +
+    "/" +
+    (d.getMonth() + 1) +
+    "/" +
+    d.getFullYear() +
+    " " +
+    d.getHours() +
+    ":" +
+    d.getMinutes() +
+    " --> " +
+    " Maintained Posture";
+  //FeetList.style.backgroundColor = "#FC5900";
+  //FeetList.style.color = "white";
+  localStorage.setItem(
+    "habitPosture",
+    d.getDate() +
       "/" +
       (d.getMonth() + 1) +
       "/" +
@@ -399,33 +434,35 @@ function displayPosture() {
       d.getHours() +
       ":" +
       d.getMinutes() +
-      " --> " +
-      " Maintained Posture";
-    //FeetList.style.backgroundColor = "#FC5900";
-    //FeetList.style.color = "white";
-    localStorage.setItem(
-      "habitPosture",
-      d.getDate() +
-        "/" +
-        (d.getMonth() + 1) +
-        "/" +
-        d.getFullYear() +
-        " " +
-        d.getHours() +
-        ":" +
-        d.getMinutes() +
-        " Maintained Posture"
-    );
-    document.getElementById('sport-tracking').appendChild(PostureList);
-  };
+      " Maintained Posture"
+  );
+  document.getElementById("sport-tracking").appendChild(PostureList);
+}
 
 // Alcohol button
-buttonAlcohol.addEventListener("click", function () {setTimeout(displayAlcohol, 1000)});
+buttonAlcohol.addEventListener("click", function () {
+  setTimeout(displayAlcohol, 1000);
+});
 function displayAlcohol() {
-    let d = new Date();
-    var AlcoholList = document.createElement("div");
-    AlcoholList.innerHTML =
-      d.getDate() +
+  let d = new Date();
+  var AlcoholList = document.createElement("div");
+  AlcoholList.innerHTML =
+    d.getDate() +
+    "/" +
+    (d.getMonth() + 1) +
+    "/" +
+    d.getFullYear() +
+    " " +
+    d.getHours() +
+    ":" +
+    d.getMinutes() +
+    " --> " +
+    " Avoided Alcohol";
+  //FeetList.style.backgroundColor = "#FC5900";
+  //FeetList.style.color = "white";
+  localStorage.setItem(
+    "habitAlcohol",
+    d.getDate() +
       "/" +
       (d.getMonth() + 1) +
       "/" +
@@ -434,25 +471,10 @@ function displayAlcohol() {
       d.getHours() +
       ":" +
       d.getMinutes() +
-      " --> " +
-      " Avoided Alcohol";
-    //FeetList.style.backgroundColor = "#FC5900";
-    //FeetList.style.color = "white";
-    localStorage.setItem(
-      "habitAlcohol",
-      d.getDate() +
-        "/" +
-        (d.getMonth() + 1) +
-        "/" +
-        d.getFullYear() +
-        " " +
-        d.getHours() +
-        ":" +
-        d.getMinutes() +
-        " Avoided Alcohol"
-    );
-    document.getElementById('sport-tracking').appendChild(AlcoholList);
-  };
+      " Avoided Alcohol"
+  );
+  document.getElementById("sport-tracking").appendChild(AlcoholList);
+}
 
 // Fetch items from localStorage
 function allStorage() {
@@ -469,8 +491,8 @@ function allStorage() {
     results.innerHTML = values[x];
     results.style.backgroundColor = "#8EE4AF";
     results.style.padding = "10px";
-    results.style.fontSize = '16px';
-    document.getElementById('results-tracked').appendChild(results);
+    results.style.fontSize = "16px";
+    document.getElementById("results-tracked").appendChild(results);
   }
 }
 resultsTab.innerHTML = allStorage();
@@ -489,4 +511,3 @@ function clearStorage() {
   } else {
   }
 }
-
